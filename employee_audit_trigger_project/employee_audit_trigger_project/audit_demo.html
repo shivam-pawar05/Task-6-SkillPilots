@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Audit Trigger System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">DATABASE MINI PROJECT</div>
+    <h1>Employee Audit Trigger System</h1>
+    <p>Track employee record changes with MySQL triggers.</p>
+    <a class="primary-link" href="#workflow">Explore workflow <span aria-hidden="true">→</span></a>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Audit operations">
+      <article class="stat-card"><span class="stat-icon insert">＋</span><div><strong>INSERT</strong><p>Record new rows</p></div></article>
+      <article class="stat-card"><span class="stat-icon update">↻</span><div><strong>UPDATE</strong><p>Compare old and new values</p></div></article>
+      <article class="stat-card"><span class="stat-icon delete">−</span><div><strong>DELETE</strong><p>Preserve deleted row details</p></div></article>
+    </section>
+
+    <section class="panel" id="workflow">
+      <div class="section-heading"><div><span class="kicker">HOW IT WORKS</span><h2>Automatic audit trail</h2></div><span class="status-pill"><span></span> Trigger-based</span></div>
+      <div class="flow">
+        <div class="flow-node"><span>01</span><strong>Employee action</strong><small>Insert, update or delete</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node active"><span>02</span><strong>Database trigger</strong><small>Runs automatically</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node"><span>03</span><strong>Audit table</strong><small>Stores who, when and what</small></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <span class="kicker">AUDIT SCHEMA</span>
+      <h2>What each log entry stores</h2>
+      <div class="schema-grid">
+        <div><b>operation</b><span>INSERT / UPDATE / DELETE</span></div>
+        <div><b>changed_by</b><span>Database or app user</span></div>
+        <div><b>changed_at</b><span>Timestamp of the action</span></div>
+        <div><b>old_values</b><span>Previous row data, when available</span></div>
+        <div><b>new_values</b><span>New row data, when available</span></div>
+      </div>
+    </section>
+
+    <section class="panel note">
+      <div class="note-mark">i</div><div><h3>Run the database scripts</h3><p>This page is a visual overview. To enable real audit logging, import <code>schema.sql</code> into MySQL/MariaDB, then run the examples in <code>test_queries.sql</code>. See <code>README.md</code> for full steps.</p></div>
+    </section>
+  </main>
+  <footer>Employee Audit Trigger System <span>•</span> HTML · CSS · JavaScript-ready · MySQL</footer>
+  <script src="script.js"></script>
+</body>
+</html>
